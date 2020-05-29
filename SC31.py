@@ -1,18 +1,17 @@
 t=int(input())
+for x in range(t):
+     n=int(input())
+     a=[]
+     for i in range(n):
+          ele=list(map(int,input()))
+          a.append(ele)
+     for i in range(1,n):
+          for j in range(10):
+               a[0][j]=a[0][j]-a[i][j]
+               if a[0][j]<0:
+                    a[0][j]=(-1)*a[0][j]
+     p=0
+     for i in range(10):
+          p+=a[0][i]
 
-for t1 in range(t):
-    n=int(input())
-    lst=[]
-    for i in range(n):
-        l=list(map(int,input()))
-        lst.append(l)
-    for i in range(1,n):
-        for j in range(10):
-            lst[0][j]-=lst[i][j]
-            if lst[0][j]<0:
-                lst[0][j]=-lst[0][j]
-    count=0
-    for i in range(10):
-        if lst[0][i]==1:
-            count+=1
-    print(count)
+     print(p)
